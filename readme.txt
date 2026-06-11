@@ -2,9 +2,9 @@
 Contributors: rathly
 Donate link: https://rathly.com/wordpress-plugins/410-response-manager/
 Tags: seo, url-management, http-status, redirect, gone
-Requires at least: 5.6
-Tested up to: 6.7.1
-Stable tag: 1.0.0
+Requires at least: 6.0
+Tested up to: 7.0
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -80,6 +80,11 @@ Yes, the plugin implements WordPress caching for optimal performance. URL patter
 
 == Changelog ==
 
+= 1.0.1 =
+* Confirmed compatibility with WordPress 7.0.
+* Reviewed and confirmed security practices: nonce verification, capability checks, prepared statements, output escaping, and validated CSV uploads.
+* Housekeeping: corrected the GitHub repository link in the readme.
+
 = 1.0.0 =
 * Initial release
 * Manual URL pattern management
@@ -90,6 +95,9 @@ Yes, the plugin implements WordPress caching for optimal performance. URL patter
 * Security enhancements
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Confirms compatibility with WordPress 7.0 and includes a security and guideline review. Upgrade recommended.
 
 = 1.0.0 =
 Initial release of 410 Response Manager
@@ -109,6 +117,6 @@ Initial release of 410 Response Manager
 
 * For support, visit: [Rathly Contact](https://rathly.com/contact-us/)
 * Documentation: [Plugin Documentation](https://rathly.com/wordpress-plugins/410-response-manager/)
-* GitHub repository: [GitHub](https://github.com/rathly/410-response-manager)
+* GitHub repository: [GitHub](https://github.com/harrylaurel/410-Response-Manager)
 
 The plugin is actively maintained and tested with the latest versions of WordPress and PHP.

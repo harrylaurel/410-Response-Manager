@@ -3,8 +3,8 @@
  * Plugin Name: 410 Response Manager
  * Plugin URI: https://rathly.com/wordpress-plugins/410-response-manager/
  * Description: Manage 410 Gone responses with manual entries, regex patterns, and CSV import functionality.
- * Version: 1.0.0
- * Requires at least: 5.6
+ * Version: 1.0.1
+ * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Rathly
  * Author URI: https://rathly.com/services/web-design/
@@ -15,7 +15,7 @@
  *
  * @package 410-response-manager
  * @author Rathly
- * @copyright 2024 Rathly
+ * @copyright 2024-2026 Rathly
  */
 
 // Prevent direct access
@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
 /**
  * Define plugin constants
  */
-define('RATHLY_410_VERSION', '1.0.0');
+define('RATHLY_410_VERSION', '1.0.1');
 define('RATHLY_410_FILE', __FILE__);
 define('RATHLY_410_PATH', plugin_dir_path(__FILE__));
 define('RATHLY_410_URL', plugin_dir_url(__FILE__));

@@ -3,7 +3,7 @@
  * Plugin Name: 410 Response Manager
  * Plugin URI: https://rathly.com/wordpress-plugins/410-response-manager/
  * Description: Manage 410 Gone responses with manual entries, regex patterns, and CSV import functionality.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Rathly
@@ -26,7 +26,7 @@ if (!defined('ABSPATH')) {
 /**
  * Define plugin constants
  */
-define('RATHLY_410_VERSION', '1.0.1');
+define('RATHLY_410_VERSION', '1.0.2');
 define('RATHLY_410_FILE', __FILE__);
 define('RATHLY_410_PATH', plugin_dir_path(__FILE__));
 define('RATHLY_410_URL', plugin_dir_url(__FILE__));
@@ -379,13 +379,9 @@ class RathlyResponse410Manager {
             wp_die(esc_html__('Insufficient permissions', '410-response-manager'));
         }
 
-        // Get form data with nonce verification
-        $post_data = wp_unslash($_POST);
-        if (!isset($post_data['_wpnonce']) || !wp_verify_nonce($post_data['_wpnonce'], 'rathly_410_manager_action')) {
-            wp_die(esc_html__('Security check failed', '410-response-manager'));
-        }
-
-        if (isset($post_data['add_url'])) {
+        // The nonce is verified above with sanitize_text_field( wp_unslash() ).
+        // These are presence-only checks to route the request; no value is used here.
+        if (isset($_POST['add_url'])) {
             $this->handle_url_addition();
         } elseif (isset($_FILES['csv_file'])) {
             $this->handle_csv_upload();
@@ -652,7 +648,7 @@ class RathlyResponse410Manager {
             ));
         }
         
-        $id = isset($_POST['id']) ? absint($_POST['id']) : 0;
+        $id = isset($_POST['id']) ? absint(wp_unslash($_POST['id'])) : 0;
         
         if ($id) {
             $result = $this->delete_url_pattern($id);

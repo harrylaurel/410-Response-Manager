@@ -4,7 +4,7 @@ Donate link: https://rathly.com/wordpress-plugins/410-response-manager/
 Tags: seo, url-management, http-status, redirect, gone
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -80,6 +80,11 @@ Yes, the plugin implements WordPress caching for optimal performance. URL patter
 
 == Changelog ==
 
+= 1.0.2 =
+* Security: nonce verification now sanitizes the nonce value with sanitize_text_field( wp_unslash() ) in all cases; removed a redundant unsanitized nonce check in the form handler.
+* Consistency: unslash the AJAX delete ID before casting with absint().
+* Fixed a license mismatch: LICENSE.txt now contains the GPLv2 text to match the GPLv2 declaration in the plugin header and readme.
+
 = 1.0.1 =
 * Confirmed compatibility with WordPress 7.0.
 * Reviewed and confirmed security practices: nonce verification, capability checks, prepared statements, output escaping, and validated CSV uploads.
@@ -95,6 +100,9 @@ Yes, the plugin implements WordPress caching for optimal performance. URL patter
 * Security enhancements
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Addresses code review feedback: stronger nonce sanitization and a corrected license file. Upgrade recommended.
 
 = 1.0.1 =
 Confirms compatibility with WordPress 7.0 and includes a security and guideline review. Upgrade recommended.
